@@ -125,7 +125,7 @@ msena@DESKTOP-NU65P6S MINGW64 /d/Projetos/site_empresa (p04_17.06_config_request
 
 #### Salvando localmente
 ```
- git commit -m "Configurando o log segurança usando requestlog, configurando no settings.py"
+ git commit -m "Configurando o log de segurança usando requestlog, configurando no settings.py"
 
  git push origin p04_17.06_config_requestLOG
 ```
