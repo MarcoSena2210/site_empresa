@@ -106,13 +106,4 @@ Not Found: /favicon.ico
 ```
 
 Dica: Será dado uma alerta sobre as migrações, não se preocupe nesse momento.
-Deve ser copiado o endereço http no browse, deve ser aberto uma pagina do djago se tudo deu certo.   
-
-### Criando a 1ª Branch do projeto
-
-```
-git checkout -b parte01_config_static
-
-
-
-msena@DESKTOP-NU65P6S MINGW64 /d/Projetos/site_empresa (main)
+Deve ser copiado o endereço http no browse, deve ser aberto uma pagina do djago se tudo deu certo.  
