@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 import sys
 from dotenv import load_dotenv
+from corsheaders.defaults import default_headers
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -44,7 +45,34 @@ DEBUG = os.getenv('DEBUG')
 
 
 
-ALLOWED_HOSTS = []
+#### Servidores
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+]
+
+# Lista dos cors
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'X-Register',
+]
+
+
+# CORS Config
+CORS_ORIGIN_ALLOW_ALL = True #Permite que qualquer siteacesse o site local
+
+# CORS_ORIGIN_ALLOW_ALL como True, o que permite que qualquer site acesse seus recursos
+
+# Defina como False e adicione o site no CORS_ORIGIN_WHITELIST onde somente o site da lista acesse os seus recursos
+CORS_ALLOW_CREDENTIALS = False
+CORS_ORIGIN_WHITELIST = ['http://meusite.com',] # Lista.
+
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    ADMINS = [(os.getenv('SUPER_USER'), os.getenv('EMAIL'))]
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    
+    
 
 
 # Application definition
@@ -62,6 +90,7 @@ DJANGO_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # Cors
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -71,7 +100,7 @@ MIDDLEWARE = [
 
 # Aplicações de terceiros
 THIRD_APPS = [
-...
+    "corsheaders",
 ]
 
 # Aplicações do projeto
