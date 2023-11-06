@@ -273,13 +273,17 @@ msena@DESKTOP-NU65P6S MINGW64 /d/Projetos/site_empresa (p03_16.05_config_CORS)
 
 #### Salvando localmente
 ```
-$ git commit -m "Configurando a segurança usando CORS, configurando no settings.py"
+ git commit -m "Configurando a segurança usando CORS, configurando no settings.py"
+
+ git push origin p03_16.05_config_CORS
 ```
+
+
 #### Fazendo o merge (atualizando o main)
 #### 1-Muda para branch principal
 
 ```
-$ git checkout main
+git checkout main 
 ```
 
 #### 2-Faz o merge
